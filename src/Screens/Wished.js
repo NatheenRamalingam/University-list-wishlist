@@ -21,7 +21,7 @@ function Wished(props) {
 
     const removeHandler = (id) => {
         console.log('id =',id);
-       if(window.confirm(`Are you sure to remove wishlist id = ${id} ?`)) {
+       if(window.confirm(`Are you sure to remove wishlist id = ${id + 1} ?`)) {
             props.removeWishList(id);
        } else {
            return null;
@@ -53,7 +53,7 @@ function Wished(props) {
                                 wishList.map((item,key) => {
                                     return (
                                         <tr key={key} >
-                                            <td> {key} </td>
+                                            <td> {key + 1} </td>
                                             <td> {item} </td>
                                             <td>
                                                 <button onClick={()=> removeHandler(key)} className="btn btn-danger btn-sm">
